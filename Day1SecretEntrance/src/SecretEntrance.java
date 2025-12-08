@@ -20,62 +20,62 @@ import java.util.Scanner;
  * Please see the attached document for the new combination."
  * <p style="color:#C0C0C0">
  * The safe has a dial with only an arrow on it; around the dial are the<br>
- * numbers <code style="color:#F5F5DC">0</code> through <code style="color:#F5F5DC">99</code> in order. As you turn the dial, it makes a small <b style="color:White">click</b><br>
+ * numbers <code style="color:#FFE4C4">0</code> through <code style="color:#FFE4C4">99</code> in order. As you turn the dial, it makes a small <b style="color:White">click</b><br>
  * noise as it reaches each number.
  * <p style="color:#C0C0C0">
  * The attached document (your puzzle input) contains a sequence of <b style="color:White">rotations</b>,<br>
  * one per line, which tell you how to open the safe. A rotation starts with<br>
- * an <code style="color:#F5F5DC">L</code> or <code style="color:#F5F5DC">R</code> which indicates whether the rotation should be to the left<br>
+ * an <code style="color:#FFE4C4">L</code> or <code style="color:#FFE4C4">R</code> which indicates whether the rotation should be to the left<br>
  * (toward lower numbers) or to the <b style="color:White">right</b> (toward higher numbers). Then, the<br>
  * rotation has a <b style="color:White">distance</b> value which indicates how many clicks the dial<br>
  * should be rotated in that direction.
  * <p style="color:#C0C0C0">
- * So, if the dial were pointing at <code style="color:#F5F5DC">11</code>, a rotation of <code style="color:#F5F5DC">R8</code> would cause the dial<br>
- * to point at <code style="color:#F5F5DC">19</code>. After that, a rotation of <code style="color:#F5F5DC">L19</code> would cause it to point at <code style="color:#F5F5DC">0</code>.
+ * So, if the dial were pointing at <code style="color:#FFE4C4">11</code>, a rotation of <code style="color:#FFE4C4">R8</code> would cause the dial<br>
+ * to point at <code style="color:#FFE4C4">19</code>. After that, a rotation of <code style="color:#FFE4C4">L19</code> would cause it to point at <code style="color:#FFE4C4">0</code>.
  * <p style="color:#C0C0C0">
- * Because the dial is a circle, turning the dial <b style="color:White">left from <code style="color:#F5F5DC">0</code></b> one click makes<br>
- * it point at <code style="color:#F5F5DC">99</code>. Similarly, turning the dial <b style="color:White">right from <code style="color:#F5F5DC">99</code></b> one click makes<br>
- * it point at <code style="color:#F5F5DC">0</code>.
+ * Because the dial is a circle, turning the dial <b style="color:White">left from <code style="color:#FFE4C4">0</code></b> one click makes<br>
+ * it point at <code style="color:#FFE4C4">99</code>. Similarly, turning the dial <b style="color:White">right from <code style="color:#FFE4C4">99</code></b> one click makes<br>
+ * it point at <code style="color:#FFE4C4">0</code>.
  * <p style="color:#C0C0C0">
- * So, if the dial were pointing at <code style="color:#F5F5DC">5</code>, a rotation of <code style="color:#F5F5DC">L10</code> would cause it to<br>
- * point at <code style="color:#F5F5DC">95</code>. After that, a rotation of <code style="color:#F5F5DC">R5</code> could cause it to point at <code style="color:#F5F5DC">0</code>.
+ * So, if the dial were pointing at <code style="color:#FFE4C4">5</code>, a rotation of <code style="color:#FFE4C4">L10</code> would cause it to<br>
+ * point at <code style="color:#FFE4C4">95</code>. After that, a rotation of <code style="color:#FFE4C4">R5</code> could cause it to point at <code style="color:#FFE4C4">0</code>.
  * <p style="color:#C0C0C0">
- * The dial starts by pointing at <code style="color:#F5F5DC">50</code>.
+ * The dial starts by pointing at <code style="color:#FFE4C4">50</code>.
  * <p style="color:#C0C0C0">
  * You could follow the instructions, but your recent required official North<br>
  * Pole secret entrance security training seminar taught you that the safe is<br>
  * actually a decoy. The actual password is <b style="color:White">the number of times the dial is<br>
- * left pointing at <code style="color:#F5F5DC">0</code> after any rotation in the sequence</b>.
+ * left pointing at <code style="color:#FFE4C4">0</code> after any rotation in the sequence</b>.
  * <p style="color:#C0C0C0">
  * For example, suppose the attached document contained the following<br>
  * rotations:
  * <p style="color:#C0C0C0">
- * <code style="color:#F5F5DC">L68</code><br>
- * <code style="color:#F5F5DC">L30</code><br>
- * <code style="color:#F5F5DC">R48</code><br>
- * <code style="color:#F5F5DC">L5</code><br>
- * <code style="color:#F5F5DC">R60</code><br>
- * <code style="color:#F5F5DC">L55</code><br>
- * <code style="color:#F5F5DC">L1</code><br>
- * <code style="color:#F5F5DC">L99</code><br>
- * <code style="color:#F5F5DC">R14</code><br>
- * <code style="color:#F5F5DC">L82</code>
+ * <code style="color:#FFE4C4">L68</code><br>
+ * <code style="color:#FFE4C4">L30</code><br>
+ * <code style="color:#FFE4C4">R48</code><br>
+ * <code style="color:#FFE4C4">L5</code><br>
+ * <code style="color:#FFE4C4">R60</code><br>
+ * <code style="color:#FFE4C4">L55</code><br>
+ * <code style="color:#FFE4C4">L1</code><br>
+ * <code style="color:#FFE4C4">L99</code><br>
+ * <code style="color:#FFE4C4">R14</code><br>
+ * <code style="color:#FFE4C4">L82</code>
  * <p style="color:#C0C0C0">
  * Following these rotations would cause the dial to move as follows:
  * <p style="color:#C0C0C0">
- * - The dial starts by pointing at <code style="color:#F5F5DC">50</code>.<br>
- * - The dial is rotated <code style="color:#F5F5DC">L68</code> to point at <code style="color:#F5F5DC">82</code>.<br>
- * - The dial is rotated <code style="color:#F5F5DC">L30</code> to point at <code style="color:#F5F5DC">52</code>.<br>
- * - The dial is rotated <code style="color:#F5F5DC">R48</code> to point at <code><b style="color:White">0</b></code>.<br>
- * - The dial is rotated <code style="color:#F5F5DC">L5</code> to point at <code style="color:#F5F5DC">95</code>.<br>
- * - The dial is rotated <code style="color:#F5F5DC">R60</code> to point at <code style="color:#F5F5DC">55</code>.<br>
- * - The dial is rotated <code style="color:#F5F5DC">L55</code> to point at <code><b style="color:White">0</b></code>.<br>
- * - The dial is rotated <code style="color:#F5F5DC">L1</code> to point at <code style="color:#F5F5DC">99</code>.<br>
- * - The dial is rotated <code style="color:#F5F5DC">L99</code> to point at <code><b style="color:White">0</b></code>.<br>
- * - The dial is rotated <code style="color:#F5F5DC">R14</code> to point at <code style="color:#F5F5DC">14</code>.<br>
- * - The dial is rotated <code style="color:#F5F5DC">L82</code> to point at <code style="color:#F5F5DC">32</code>.
+ * - The dial starts by pointing at <code style="color:#FFE4C4">50</code>.<br>
+ * - The dial is rotated <code style="color:#FFE4C4">L68</code> to point at <code style="color:#FFE4C4">82</code>.<br>
+ * - The dial is rotated <code style="color:#FFE4C4">L30</code> to point at <code style="color:#FFE4C4">52</code>.<br>
+ * - The dial is rotated <code style="color:#FFE4C4">R48</code> to point at <code><b style="color:White">0</b></code>.<br>
+ * - The dial is rotated <code style="color:#FFE4C4">L5</code> to point at <code style="color:#FFE4C4">95</code>.<br>
+ * - The dial is rotated <code style="color:#FFE4C4">R60</code> to point at <code style="color:#FFE4C4">55</code>.<br>
+ * - The dial is rotated <code style="color:#FFE4C4">L55</code> to point at <code><b style="color:White">0</b></code>.<br>
+ * - The dial is rotated <code style="color:#FFE4C4">L1</code> to point at <code style="color:#FFE4C4">99</code>.<br>
+ * - The dial is rotated <code style="color:#FFE4C4">L99</code> to point at <code><b style="color:White">0</b></code>.<br>
+ * - The dial is rotated <code style="color:#FFE4C4">R14</code> to point at <code style="color:#FFE4C4">14</code>.<br>
+ * - The dial is rotated <code style="color:#FFE4C4">L82</code> to point at <code style="color:#FFE4C4">32</code>.
  * <p style="color:#C0C0C0">
- * Because the dial points at <code style="color:#F5F5DC">0</code> a total of three times during this process,<br>
+ * Because the dial points at <code style="color:#FFE4C4">0</code> a total of three times during this process,<br>
  * the password in this example is <code><b style="color:White">3</b></code>.
  * <p style="color:#C0C0C0">
  * Analyze the rotations in your attached document. <b style="color:White">What's the actual password<br>
