@@ -5,6 +5,13 @@
  * 2025 Advent of Code
  */
 
+import jdk.jfr.consumer.RecordedStackTrace;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.Scanner;
+
 /**
  * <html> <head>
  * <title>Gift Shop</title>
@@ -72,7 +79,40 @@
  * </p></html>
  */
 public class GiftShop {
-	public static void main(String[] args) {
-	
+	public static void main(String[] args) throws FileNotFoundException {
+		java.io.File file = new File("Day2GiftShop/input.txt");
+		Scanner in = new Scanner(file);
+		String[] ranges = in.nextLine().split(",");
+		int inv = 0;
+		for(int i = 0; i < ranges.length; i++) {
+			System.out.print(YELLOW + ranges[i] + RESET);
+			int low = Integer.parseInt(ranges[i].split("-")[0]);
+			int high = Integer.parseInt(ranges[i].split("-")[1]);
+			int invalid = 0;
+			ArrayList<Integer> invalids = new ArrayList<>();
+			for(int n = low; n <= high; n++) {
+				String num = String.valueOf(n);
+				
+			}
+			if(invalid == 0) {
+				System.out.println(WHITE + " contains no invalid IDs" + RESET);
+			}
+			else if(invalids.size() == 1) {
+				System.out.print(WHITE + " has one invalid ID" + RESET + BOLD + invalids.get(0) + RESET);
+			}
+			else {
+				System.out.print(WHITE + " has " + invalids.size() + " invalid IDs" + RESET);
+				for(int j = 0; j < invalids.size(); j++) {
+					System.out.print(WHITE + ", " + RESET + BOLD + invalids.get(j) + RESET);
+				}
+			}
+			System.out.println(WHITE + "." + RESET);
+		}
+		System.out.println(WHITE + "\nSum of invalid IDs is " + RESET + BOLD + inv + RESET + WHITE + "." + RESET);
 	}
+	
+	public static final String RESET = "\u001B[0m";
+	public static final String WHITE = "\u001B[37m";
+	public static final String YELLOW = "\u001B[33m";
+	public static final String BOLD = "\u001B[1m";
 }
