@@ -5,8 +5,6 @@
  * 2025 Advent of Code
  */
 
-import jdk.jfr.consumer.RecordedStackTrace;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -83,27 +81,38 @@ public class GiftShop {
 		java.io.File file = new File("Day2GiftShop/input.txt");
 		Scanner in = new Scanner(file);
 		String[] ranges = in.nextLine().split(",");
-		int inv = 0;
-		for(int i = 0; i < ranges.length; i++) {
-			System.out.print(YELLOW + ranges[i] + RESET);
-			int low = Integer.parseInt(ranges[i].split("-")[0]);
-			int high = Integer.parseInt(ranges[i].split("-")[1]);
+		long inv = 0;
+		for(String range : ranges) {
+			System.out.print(YELLOW + range + RESET);
+			long low = Long.parseLong(range.split("-")[0]);
+			long high = Long.parseLong(range.split("-")[1]);
 			int invalid = 0;
-			ArrayList<Integer> invalids = new ArrayList<>();
-			for(int n = low; n <= high; n++) {
-				String num = String.valueOf(n);
-				
+			ArrayList<Long> invalids = new ArrayList<>();
+			for(long n = low; n <= high; n++) {
+				char[] num = String.valueOf(n).toCharArray();
+				if(num.length % 2 == 0) {
+					String[] nums = {"", ""};
+					for(int j = 0; j < num.length / 2; j++) {
+						nums[0] = nums[0] + num[j];
+						nums[1] = nums[1] + num[j + num.length / 2];
+					}
+					if(nums[0].equals(nums[1])) {
+						invalids.add(n);
+						invalid++;
+						inv += n;
+					}
+				}
 			}
 			if(invalid == 0) {
-				System.out.println(WHITE + " contains no invalid IDs" + RESET);
+				System.out.print(WHITE + " contains no invalid IDs" + RESET);
 			}
 			else if(invalids.size() == 1) {
-				System.out.print(WHITE + " has one invalid ID" + RESET + BOLD + invalids.get(0) + RESET);
+				System.out.print(WHITE + " has one invalid ID, " + RESET + BOLD + invalids.get(0) + RESET);
 			}
 			else {
 				System.out.print(WHITE + " has " + invalids.size() + " invalid IDs" + RESET);
-				for(int j = 0; j < invalids.size(); j++) {
-					System.out.print(WHITE + ", " + RESET + BOLD + invalids.get(j) + RESET);
+				for(Long aLong : invalids) {
+					System.out.print(WHITE + ", " + RESET + BOLD + aLong + RESET);
 				}
 			}
 			System.out.println(WHITE + "." + RESET);
