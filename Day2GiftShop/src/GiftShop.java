@@ -1,10 +1,3 @@
-/*
- * Gift Shop
- * Jonathan Burgener
- * December 7, 2025
- * 2025 Advent of Code
- */
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -14,30 +7,25 @@ import java.util.Scanner;
 
 /**
  * <html> <head>
- * <title>Gift Shop</title>
+ * <title>Gift Shop - Advent of Code 2025</title>
  * <style>
  * .glow{
  * color: White;
- * size: 18px;
  * text-shadow: 0 0 2px white, 0px 0px 2px white;
  * }
  * .num{
  * color:#D0D0D0;
- * size:22px;
  * }
  * .newArea{
  * color:Yellow;
- * size:24px;
  * text-shadow: 0 0 2px Yellow, 0px 0px 3px Yellow;
  * }
  * .probHead{
- * size:25px;
  * color: White;
  * }
- * </style>
- * </head>
+ * </style></head>
  *
- * <body style="color:#C0C0C0; background-color:#0f0f22; size:22px"><p>
+ * <body style="color:#E2E2E2; background-color:#0f0f22"><p>
  * <span class=probHead>--- Day 2: Gift Shop ---</span>
  * <p>
  * You get inside and take the elevator to its only other stop: the gift shop.<br>
@@ -125,10 +113,22 @@ import java.util.Scanner;
  * <p class=glow>
  * What do you get if you add up all of the invalid IDs using these new rules?
  * </p></body></html>
+ *
+ * @author Jonathan Burgener
+ * @version December 7, 2025
  */
 public class GiftShop {
+	/**
+	 * Give output for part one (true) or part two (false)
+	 */
 	private static final boolean PART_ONE = false;
 	
+	/**
+	 * Finds the invalid IDs
+	 *
+	 * @param args Default arguments
+	 * @throws FileNotFoundException Handles issue with files
+	 */
 	public static void main(String[] args) throws FileNotFoundException {
 		java.io.File file = new File("Day2GiftShop/input.txt");
 		Scanner in = new Scanner(file);
@@ -210,8 +210,8 @@ public class GiftShop {
 		System.out.println(WHITE + "\nSum of invalid IDs is " + RESET + BOLD + inv + RESET + WHITE + "." + RESET);
 	}
 	
-	public static final String RESET = "\u001B[0m";
-	public static final String WHITE = "\u001B[37m";
-	public static final String YELLOW = "\u001B[33m";
-	public static final String BOLD = "\u001B[1m";
+	private static final String RESET = "\u001B[0m";
+	private static final String WHITE = "\u001B[37m";
+	private static final String YELLOW = "\u001B[33m";
+	private static final String BOLD = "\u001B[1m";
 }
