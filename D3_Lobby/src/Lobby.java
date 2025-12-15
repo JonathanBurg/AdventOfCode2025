@@ -3,9 +3,8 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-/***
- * <html> <head>
- * <title>Gift Shop - Advent of Code 2025</title>
+/**
+ * <head>
  * <style>
  * .glow{
  * color: White;
@@ -23,9 +22,9 @@ import java.util.Scanner;
  * }
  * </style></head>
  *
- * <body style="color:#E2E2E2; background-color:#0f0f22"><p>
+ * <body style="color:#F2F2F2; background-color:#0f0f22">
  * <span class=probHead>--- Day 3: Lobby ---</span>
- * <p>
+ * <p style="color:#F2F2F2">
  * You descend a short staircase, enter the surprisingly vast lobby, and are<br>
  * quickly cleared by the security checkpoint. When you get to the main<br>
  * elevators, however, you discover that each one has a red light above it:<br>
@@ -63,20 +62,63 @@ import java.util.Scanner;
  * You'll need to find the largest possible joltage each bank can produce. In<br>
  * the above example:
  * <p>
- *   - In <code class=num><span class=glow>98</span>7654321111111</code>, you can make the largest joltage possible, <code class=glow>98</code>, by<br>
- *   turning on the first two batteries.<br>
- *   - In <code class=num><span class=glow>8</span>1111111111111<span class=glow>9</span></code>, you can make the largest joltage possible by<br>
- *   turning on the batteries labeled <code class=num>8</code> and <code class=num>9</code>, producing <code class=glow>89</code> jolts.<br>
- *   - In <code class=num>2342342342342<span class=glow>78</span></code>, you can make <code class=glow>78</code> by turning on the last two<br>
- *   batteries (marked <code class=num>7</code> and <code class=num>8</code>).<br>
- *   - In <code class=num>818181<span class=glow>9</span>1111<span class=glow>2</span>111</code>, the largest joltage you can produce is <code class=glow>92</code>.
+ * &nbsp;&nbsp;&nbsp;- In <code class=num><span class=glow>98</span>7654321111111</code>, you can make the largest joltage possible, <code class=glow>98</code>, by<br>
+ * &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  turning on the first two batteries.<br>
+ * &nbsp;&nbsp;&nbsp;  - In <code class=num><span class=glow>8</span>1111111111111<span class=glow>9</span></code>, you can make the largest joltage possible by<br>
+ * &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  turning on the batteries labeled <code class=num>8</code> and <code class=num>9</code>, producing <code class=glow>89</code> jolts.<br>
+ * &nbsp;&nbsp;&nbsp;  - In <code class=num>2342342342342<span class=glow>78</span></code>, you can make <code class=glow>78</code> by turning on the last two<br>
+ * &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  batteries (marked <code class=num>7</code> and <code class=num>8</code>).<br>
+ * &nbsp;&nbsp;&nbsp; - In <code class=num>818181<span class=glow>9</span>1111<span class=glow>2</span>111</code>, the largest joltage you can produce is <code class=glow>92</code>.
  * <p>
  * The total output joltage is the sum of the maximum joltage from each bank,<br>
  * so in this example, the total output joltage is <code class=num>98</code> + <code class=num>89</code> + <code class=num>78</code> + <code class=num>92</code> = <code class=glow>357</code>.
  * <p>
  * There are many batteries in front of you. Find the maximum joltage possible<br>
  * from each bank; <span class=glow>what is the total output joltage?</span>
- * </p></body></html>
+ * <p>
+ * Your puzzle answer was <code class=num>17535</code>.
+ * <p class=newArea>
+ * The first half of this puzzle is complete! It provides one gold star: *
+ * <p class=probHead>
+ * --- Part Two ---
+ * <p>
+ * The escalator doesn't move. The Elf explains that it probably needs more
+ * <br>joltage to overcome the static friction of the system and hits the big red
+ * <br>"joltage limit safety override" button. You lose count of the number of
+ * <br>times she needs to confirm "yes, I'm sure" and decorate the lobby a bit
+ * <br>while you wait.
+ * <p>
+ * Now, you need to make the largest joltage by turning on exactly twelve
+ * <br>batteries within each bank.
+ * <p>
+ * The joltage output for the bank is still the number formed by the digits of
+ * <br>the batteries you've turned on; the only difference is that now there will
+ * <br>be 12 digits in each bank's joltage output instead of two.
+ * <p>
+ * Consider again the example from before:
+ * <p>
+ * 987654321111111
+ * <br>811111111111119
+ * <br>234234234234278
+ * <br>818181911112111
+ * <p>
+ * Now, the joltages are much larger:
+ * <p>
+ * &nbsp;&nbsp;&nbsp; - In 987654321111111, the largest joltage can be found by turning on
+ * <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   everything except some 1s at the end to produce 987654321111.
+ * <br>&nbsp;&nbsp;&nbsp; - In the digit sequence 811111111111119, the largest joltage can be
+ * <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   found by turning on everything except some 1s, producing 811111111119.
+ * <br>&nbsp;&nbsp;&nbsp; - In 234234234234278, the largest joltage can be found by turning on
+ * <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   everything except a 2 battery, a 3 battery, and another 2 battery near
+ * <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   the start to produce 434234234278.
+ * <br>&nbsp;&nbsp;&nbsp; - In 818181911112111, the joltage 888911112111 is produced by turning on
+ * <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   everything except some 1s near the front.
+ * <p>
+ * The total output joltage is now much larger: 987654321111 + 811111111119 +
+ * <br>434234234278 + 888911112111 = 3121910778619.
+ * <p>
+ * What is the new total output joltage?
+ * </p></body>
  * @author Jonathan Burgener
  * @version December 12, 2025
  */
