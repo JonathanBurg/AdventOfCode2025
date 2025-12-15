@@ -10,11 +10,31 @@ import java.util.Scanner;
  * <title>Gift Shop - Advent of Code 2025</title>
  * <style>
  * .glow{
- * color: White;
- * text-shadow: 0 0 2px white, 0px 0px 2px white;
+ * color: #FFFFFF:
+ * font-style: normal;
+ * text-shadow: 0 0 2px #FFFFFF, 0px 0px 2px #FFFFFF;
  * }
  * .num{
- * color:#D0D0D0;
+ * color:#ADBDC9;
+ * background-color:#10101A
+ * }
+ * code {
+ *     position:relative;
+ *     display: inline-block;
+ *     margin: 0;
+ *     padding: 3;
+ *     background: #10101a
+ * }
+ * code::before {
+ *     z-indent: -1;
+ *     content: "";
+ *     position: absolute;
+ *     display: block;
+ *     left: -2px;
+ *     right: -2px;
+ *     top: 3px;
+ *     bottom: 0px;
+ *     border: 1px solid #333340;
  * }
  * .newArea{
  * color:Yellow;
@@ -25,7 +45,7 @@ import java.util.Scanner;
  * }
  * </style></head>
  *
- * <body style="color:#E2E2E2; background-color:#0f0f22"><p>
+ * <body style="color:#CCCCCC; background-color:#0F0F23"><p>
  * <span class=probHead>--- Day 2: Gift Shop ---</span>
  * <p>
  * You get inside and take the elevator to its only other stop: the gift shop.<br>
@@ -47,8 +67,8 @@ import java.util.Scanner;
  * example:
  * <p>
  * <code class=num>11-22,95-115,998-1012,1188511880-1188511890,222220-222224,</code><br>
- * <code class=num>1698522-1698528,446443-446449,38593856-38593862,565653-565659,</code><br>
- * <code class=num>824824821-824824827,2121212118-2121212124</code>
+ * <code>1698522-1698528,446443-446449,38593856-38593862,565653-565659,</code><br>
+ * <code>824824821-824824827,2121212118-2121212124</code>
  * <p>
  * (The ID ranges are wrapped here for legibility; in your input, they appear<br>
  * on a single long line.)
