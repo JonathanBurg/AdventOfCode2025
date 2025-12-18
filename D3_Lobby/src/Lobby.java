@@ -7,11 +7,31 @@ import java.util.Scanner;
  * <head>
  * <style>
  * .glow{
- * color: White;
- * text-shadow: 0 0 2px white, 0px 0px 2px white;
+ * color: #FFFFFF:
+ * font-style: normal;
+ * text-shadow: 0 0 2px #FFFFFF, 0px 0px 2px #FFFFFF;
  * }
  * .num{
- * color:#D0D0D0;
+ * color:#ADBDC9;
+ * background-color:#10101A
+ * }
+ * code {
+ * position:relative;
+ * display: inline-block;
+ * margin: 0;
+ * padding: 3;
+ * background: #10101a
+ * }
+ * code::before {
+ * z-indent: -1;
+ * content: "";
+ * position: absolute;
+ * display: block;
+ * left: -2px;
+ * right: -2px;
+ * top: 3px;
+ * bottom: 0px;
+ * border: 1px solid #333340;
  * }
  * .newArea{
  * color:Yellow;
@@ -56,22 +76,29 @@ import java.util.Scanner;
  * corresponds to a single bank of batteries. Within each bank, you need to<br>
  * turn on <span class=glow>exactly two</span> batteries; the joltage that the bank produces is equal<br>
  * to the number formed by the digits on the batteries you've turned on. For<br>
- * example, if you have a bank like <code class=num>12345</code> and you turn on batteries <code class=num>2</code> and <code class=num>4</code>,<br>
+ * example, if you have a bank like <code class=num>12345</code> and you turn on batteries <code class=num>2</code> and
+ * <code class=num>4</code>,<br>
  * the bank would produce <code class=num>24</code> jolts. (You cannot rearrange batteries.)
  * <p>
  * You'll need to find the largest possible joltage each bank can produce. In<br>
  * the above example:
  * <p>
- * &nbsp;&nbsp;&nbsp;- In <code class=num><span class=glow>98</span>7654321111111</code>, you can make the largest joltage possible, <code class=glow>98</code>, by<br>
+ * &nbsp;&nbsp;&nbsp;- In <code class=num><span class=glow>98</span>7654321111111</code>, you can make the largest
+ * joltage possible, <code class=glow>98</code>, by<br>
  * &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  turning on the first two batteries.<br>
- * &nbsp;&nbsp;&nbsp;  - In <code class=num><span class=glow>8</span>1111111111111<span class=glow>9</span></code>, you can make the largest joltage possible by<br>
- * &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  turning on the batteries labeled <code class=num>8</code> and <code class=num>9</code>, producing <code class=glow>89</code> jolts.<br>
- * &nbsp;&nbsp;&nbsp;  - In <code class=num>2342342342342<span class=glow>78</span></code>, you can make <code class=glow>78</code> by turning on the last two<br>
+ * &nbsp;&nbsp;&nbsp;  - In <code class=num><span class=glow>8</span>1111111111111<span class=glow>9</span></code>, you
+ * can make the largest joltage possible by<br>
+ * &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  turning on the batteries labeled <code class=num>8</code> and
+ * <code class=num>9</code>, producing <code class=glow>89</code> jolts.<br>
+ * &nbsp;&nbsp;&nbsp;  - In <code class=num>2342342342342<span class=glow>78</span></code>, you can make
+ * <code class=glow>78</code> by turning on the last two<br>
  * &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  batteries (marked <code class=num>7</code> and <code class=num>8</code>).<br>
- * &nbsp;&nbsp;&nbsp; - In <code class=num>818181<span class=glow>9</span>1111<span class=glow>2</span>111</code>, the largest joltage you can produce is <code class=glow>92</code>.
+ * &nbsp;&nbsp;&nbsp; - In <code class=num>818181<span class=glow>9</span>1111<span class=glow>2</span>111</code>, the
+ * largest joltage you can produce is <code class=glow>92</code>.
  * <p>
  * The total output joltage is the sum of the maximum joltage from each bank,<br>
- * so in this example, the total output joltage is <code class=num>98</code> + <code class=num>89</code> + <code class=num>78</code> + <code class=num>92</code> = <code class=glow>357</code>.
+ * so in this example, the total output joltage is <code class=num>98</code> + <code class=num>89</code> +
+ * <code class=num>78</code> + <code class=num>92</code> = <code class=glow>357</code>.
  * <p>
  * There are many batteries in front of you. Find the maximum joltage possible<br>
  * from each bank; <span class=glow>what is the total output joltage?</span>
@@ -119,6 +146,7 @@ import java.util.Scanner;
  * <p>
  * What is the new total output joltage?
  * </p></body>
+ *
  * @author Jonathan Burgener
  * @version December 12, 2025
  */
@@ -127,11 +155,13 @@ public class Lobby {
 	/**
 	 * Finds the Joltage
 	 *
-	 * @param args Default Args
-	 * @throws FileNotFoundException Handles issues with files
+	 * @param args
+	 * 		Default Args
+	 * @throws FileNotFoundException
+	 * 		Handles issues with files
 	 */
 	public static void main(String[] args) throws FileNotFoundException {
-		java.io.File file = new File("Day3Lobby/input.txt");
+		java.io.File file = new File("D3_Lobby/input.txt");
 		Scanner in = new Scanner(file);
 		ArrayList<Integer> joltage = new ArrayList<>();
 		while(in.hasNext()) {

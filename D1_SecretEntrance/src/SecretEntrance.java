@@ -126,7 +126,7 @@ public class SecretEntrance {
 	 */
 	public static void main(String[] args) throws FileNotFoundException {
 		Scanner pause = new Scanner(System.in);
-		java.io.File file = new File("Day1SecretEntrance/input.txt");
+		java.io.File file = new File("D1_SecretEntrance/input.txt");
 		Scanner in = new Scanner(file);
 		int i = 0;
 		System.out.println(WHITE + "The dial starts by pointing at " + YELLOW + curNum + WHITE + "." + RESET);
