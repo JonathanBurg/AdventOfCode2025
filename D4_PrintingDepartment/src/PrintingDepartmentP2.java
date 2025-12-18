@@ -103,7 +103,7 @@ import java.util.Scanner;
  * of paper can be accessed by a forklift?
  * </body>
  */
-public class PrintingDepartment {
+public class PrintingDepartmentP2 {
 	public static void main(String[] args) throws FileNotFoundException {
 		java.io.File file = new File("D4_PrintingDepartment/input.txt");
 		Scanner in = new Scanner(file);
@@ -114,6 +114,7 @@ public class PrintingDepartment {
 		while(in.hasNext()) {
 			rolls.add(in.nextLine().toCharArray());
 		}
+		
 		rolls.add(0, new char[rolls.get(1).length]);
 		rolls.add(rolls.size(), new char[rolls.get(1).length]);
 		for(int i = 0; i < rolls.get(1).length; i++) {
